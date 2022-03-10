@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../imagens/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../imagens/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../imagens/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../imagens/site.webmanifest" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Vizinha Lanchonete</title>
+  </head>
+  <body>
+    <div class="topbar">
+      <img src="/imagens/logolanchonete.png" alt="logo" class="logopng" />
+
+      <div>
+        <ul class="menu">
+          <li class="menu-item">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <a
+              class="menu-link"
+              asp-area=""
+              asp-controller="Home"
+              asp-action="Index"
+              >Home</a
+            >
+          </li>
+
+          <li class="menu-item">
+            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            <a class="menu-link" href="Cardapio.html">Cardápio</a>
+          </li>
+          <li class="menu-item">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            <a class="menu-link">Pedido</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="#home" id="link-topo">
+      <i class="fa fa-shopping-cart"></i>
+    </a>
+    
+  </body>
+</html>
