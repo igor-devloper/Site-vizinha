@@ -1,90 +1,308 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Roboto+Condensed:ital,wght@0,300;0,400;1,700&display=swap');
 
-
-
-*{
+* {
   padding: 0;
-    margin: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    transition: all 0.5s;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.5s;
 }
-html{
+
+
+html {
   scroll-behavior: smooth;
 }
 
-.topbar{
-  position: relative;
-  width: 100%;
-  height: 75px;
-  background-color: #ededed;
- 
-}
-.logopng{
-  padding: 0.3rem;
-  height: 60%;
-  margin-left: 0.3rem;
-  margin-top: 0.8rem;
-}
-.menu{
-  position: absolute;
-  width: 550px;
-  height: 40px;
-  left: 189px;
-  top: 25px;
- 
-}
-
-.menu-item{
- text-align: center;
- display: inline;
- align-items: center;
- justify-content: center;
- padding: 1rem;
-
-}
-.menu-link{
- font-family: 'Baloo Da 2', serif;
- font-size: 1rem;
- color: #000;
- transition: color 1s;
-
-}
-
-.menu-link:hover{
- color: #ff8000;
-}
-.menu-item i{
-  color: red;
-  padding: 0.4rem;
-}
-#link-topo{
+.hamburguer {
+  width: 2rem;
+  height: 2rem;
   position: fixed;
-  right: 3rem;
+  z-index: 160;
+  right: 2rem;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.show-menu .hamburguer {
+  right: 16rem;
+}
+
+.line {
+  width: 100;
+  height: .1rem;
+  background-color: #fff;
+  box-shadow: 0.1rem 0.1rem 1px #000;
+  transition: transform 1s;
+}
+
+.show-menu #line1 {
+  transform: rotate(45deg) translate(.3rem, 0.60rem);
+}
+
+.show-menu #line2 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show-menu #line3 {
+  transform: rotate(-45deg) translate(-.3rem, -0.60rem);
+}
+
+.sidebar {
+  width: 20rem;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: -20rem;
+  transition: all 1s;
+  z-index: 150;
+}
+
+.show-menu .sidebar {
+  right: 0;
+
+}
+
+.menu {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-item {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.menu-link {
+  font-family: 'Mulish', serif;
+  font-size: 2rem;
+  color: #555;
+  transition: color 1s;
+
+}
+
+.menu-link:hover {
+  color: orange
+}
+
+.social-media {
+  position: absolute;
   bottom: 2rem;
-  width: 3rem;
-  height: 3rem;
-  background: #6a3093;
-  background: -webkit-linear-gradient(to right, #ff8000, #ffff00 );
-  background: linear-gradient(to right, #ffff00, #ff8000);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.social-media i {
+  background-color: red;
+  color: rgba(255, 255, 255, 1);
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  border-radius: .3rem;
-  box-shadow: 0 0.1rem 0.6rem #000;
-  transition: all 0.3s;
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  z-index: 100;
+  transition: background-color 1s;
+  border-radius: 50%;
 }
-#link-topo:hover{
+
+.social-media i:hover {
+  background-color: orangered;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  height: 5rem;
+}
+
+.footer-content {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-content p {
+  font-family: 'Josefin Slab', serif;
+  color: #ededed;
+  font-size: 1.2rem;
+  font-weight: 1000;
+  margin-top: 1rem;
+}
+
+.social-list a {
+  margin: 0 2rem;
+  color: #ededed;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+.social-list ul {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8)
+}
+@keyframes zoom {
+  0%{
+      transform: scale(1.3);
+  }
+  100%{
+      transform: scale(1);
+  }
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  animation: zoom 25s;
+}
+@keyframes zoom {
+  0%{
+      transform: scale(1.3);
+  }
+  100%{
+      transform: scale(1);
+  }
+}
+.banner {
+  position: absolute;
+  top: 30%;
+  left: 9%;
+}
+
+.banner h1 {
+  color: #fff;
+  font-size: 3.5rem;
+  font-family: 'Baloo Da 2', serif;
+  font-weight: 200;
+  text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4);
+  line-height: 3.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: moveBanner 1s 0.5s forwards;
+}
+
+.banner h2 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-family: 'Baloo Da 2', serif;
+  font-weight: 200;
+  text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4);
+  line-height: 3.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: moveBanner 1s 0.5s forwards;
+}
+
+.banner p {
+  font-family: 'Josefin Slab', serif;
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4);
+  margin-bottom: 2rem;
+  animation: moveBanner 1s 0.7s forwards;
+  opacity: 0;
+}
+.banner a{
+  color: #fff;
+  margin-left: 2rem;
+  text-shadow: none;
+  border-radius: 1rem;
+  border: 1px solid white;
+  padding: 0.8rem;
+}
+.banner a:hover{
+  text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4);
   color: red;
 }
 
-.cardapio {
+@keyframes moveBanner{
+  0%{
+      transform: translateY(10rem) rotateY(-30deg);
+  }
+  100%{
+      transform: translateY(0) rotateY(0);
+      opacity: 1;
+  }
+}
+
+.sessao.sobrenos{
+  background-color: #f5f5f5;
+}
+
+.sessao-header{
+  display: flex;
+  justify-content: center;
+}
+
+.sessao-header h1{
+  font-family: 'Baloo Da 2', serif;
+  font-size: 3rem;
+  color: #535252;
+  border-bottom: solid 3px red ;
+  margin-bottom: 1.5rem;
+  
+}
+.sessao-sobrenos{
+  width: 100%;
+  height: 100vh;
+}
+.card-sobrenos{
+  margin: 1rem;
+}
+.sobrenos{
+  margin-bottom: 10rem;
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+}
+.tipo-sobre{
+  font-size: 2rem;
+  font-family: 'Baloo Da 2', serif;
+  text-align: center;
+  background-color: #ededed;
+  width: 50%;
+  margin: auto;
+  border-radius: 1rem;
+}
+.sobre-text{
+  width: 50%;
+  font-size: 1rem;
+  font-family: 'Mulish', serif;
+  background-color: red;
+  margin-top: .5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: auto;
+}
+.sessao-cardapio{
+  width: 100%;
+  height: 100vh;
+}
+.produtos {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 2rem;
@@ -94,7 +312,7 @@ html{
   width: 18rem;
   height: 25rem;
   position: relative;
-  transition: all 0.6s;
+
 }
 
 .card-img-wrapper {
@@ -103,7 +321,8 @@ html{
   background-color: #262626;
   border-radius: .5rem;
 }
-.card-img-wrapper img{
+
+.card-img-wrapper img {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -111,85 +330,50 @@ html{
   opacity: .8;
   transition: opacity .3s;
 }
-.card:hover .card-img-wrapper{
+
+.card:hover .card-img-wrapper {
   opacity: .6;
 }
-.card-info{
+
+.card-info {
   position: absolute;
   bottom: 0;
-  padding: 2.4rem;
-  text-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, .6) ;
+  padding: 2rem;
+  text-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, .6);
   opacity: 0;
   visibility: hidden;
   transition: all .4s;
 }
 
-.card-info h2{
+.card-info h2 {
   font-family: 'Baloo Da 2', serif;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: #eee;
-
-  
-
 }
 
-.card-info h3{
+.card-info h3 {
   font-family: 'Josefin Slab', serif;
-  font-weight: bolder;
-  color: #ff4;
+  font-weight: 1000;
+  color: #ff4081;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
-.card-info p{
-  font-family:'Josefin Slab', serif;
-  color: #eee ;
+.card-info p {
+  font-family: 'Josefin Slab', serif;
+  color: #eee;
   font-weight: 400;
   width: 80%;
-  margin-bottom: 1rem;
-
+  margin-bottom: 2rem;
 }
 
-.btn{
-  background: -webkit-linear-gradient(to right, #ff8000, #ffff00 );
-  background: linear-gradient(to right, #ffff00, #ff8000);
-  font-family: 'Mulish', serif;
-  font-size: .8rem;
-  color: #eee;
-  border-radius: 5rem;
-  border: none;
-  box-shadow: 0 .1rem .8rem rgba(0, 0, 0, .4); 
-  cursor: pointer;
+.btn:hover {
+  color: #50A;
 }
 
-.btn:hover{
-  color: red;
-}
-
-
-.card-info button{
-
-  width: 8rem;
-  height: 2.5rem;
-  
-}
-.card:hover .card-info{
-  bottom: 2rem;
+.card:hover .card-info {
+  bottom: 5rem;
   opacity: 1;
   visibility: visible;
-}
-.sessao-header{
-  display: flex;
-  justify-content: center;
-  
-}
-
-.sessao-header h1{
-  font-family: 'Baloo Da 2', serif;
-  font-size: 2rem;
-  color: #535252;
-  border-bottom: solid 3px red ;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
-  
 }
